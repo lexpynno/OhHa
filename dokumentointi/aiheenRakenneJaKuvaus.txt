@@ -1,0 +1,10 @@
+Aihe: Muistipeli
+En nyt tiiä tarkemmin muuta. Muutan tätä kun olen ajatellut asiaa.
+
+Käyttäjät:
+Pelaajat
+
+Pelaajien toiminnot:
+Korttien valitseminen
+
+
