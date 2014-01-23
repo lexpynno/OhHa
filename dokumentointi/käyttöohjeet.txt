@@ -1,0 +1,7 @@
+Valitse 
+-pelaajien määrä
+-Vaikeustaso(aikamääre)
+
+Näppäimet: 
+-Nuolinäppäimet ohjaavat syötön
+-Välilyönti ampuu maalin, mikäli esiehdot täyttyvät

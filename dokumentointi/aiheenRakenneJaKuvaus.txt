@@ -1,10 +1,14 @@
-Aihe: Muistipeli
-En nyt tiiä tarkemmin muuta. Muutan tätä kun olen ajatellut asiaa.
+Aihe: Syottopeli
+Ideana luoda käyttäjän haluama määrä pelaajia ja vaikeustaso, joka on käytännössä aika. 
+Tämän ajan sisällä on kiekko saatava liikkumaan seuraavalle pelaajalle. 
+Kaikki pelaajat käytävä läpi, jonka jälkeen voittaa pelin. 
+Jos saan vielä luotua jonkinlaisen järkevän maalivahtiotoiminnon lisään vielä maalinteon.
 
 Käyttäjät:
-Pelaajat
+Pelaaja
 
 Pelaajien toiminnot:
-Korttien valitseminen
+Nuolinäppäimillä osoitus lähimpään pelaajaan, jolloin tapahtuu syöttö.
+Maalinteko esimerkiksi välilyönnillä.
 
 
