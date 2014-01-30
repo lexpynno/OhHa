@@ -17,7 +17,10 @@ public class Arpoja {
     public Arpoja() {
         this.random = new Random();
     }
-    public int satunnainenKoordinaatti() {
-       return random.nextInt(50);
+    public int satunnainenKoordinaattiX() {
+       return random.nextInt(500)+30;
+    }
+        public int satunnainenKoordinaattiY() {
+       return random.nextInt(630)+50;
     }
 }

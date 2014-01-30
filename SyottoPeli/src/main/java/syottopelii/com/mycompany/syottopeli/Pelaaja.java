@@ -4,6 +4,8 @@
  */
 package syottopelii.com.mycompany.syottopeli;
 
+import java.awt.Graphics;
+
 /**
  *
  * @author Leo
@@ -50,5 +52,8 @@ public class Pelaaja {
         } else {
             return true;
         }
+    }
+    public void piirra(Graphics graphics) {
+        graphics.fillOval(x, y, 10, 10);
     }
 }

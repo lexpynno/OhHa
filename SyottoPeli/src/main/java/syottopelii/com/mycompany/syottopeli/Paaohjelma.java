@@ -1,6 +1,7 @@
 package syottopelii.com.mycompany.syottopeli;
 
 import java.util.Scanner;
+import javax.swing.SwingUtilities;
 
 /**
  * Hello world!
@@ -9,9 +10,7 @@ import java.util.Scanner;
 public class Paaohjelma {
 
     public static void main(String[] args) {
-
-        Peli syottoPeli = new Peli();
-        syottoPeli.kaynnista();
-        
+        PelinAlustus alustus = new PelinAlustus();
+        SwingUtilities.invokeLater(alustus);
     }
 }

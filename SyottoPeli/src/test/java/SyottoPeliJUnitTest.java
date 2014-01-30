@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import syottopelii.com.mycompany.syottopeli.Kaukalo;
 import syottopelii.com.mycompany.syottopeli.Pelaaja;
 import syottopelii.com.mycompany.syottopeli.Peli;
 
@@ -19,9 +18,8 @@ import syottopelii.com.mycompany.syottopeli.Peli;
  */
 public class SyottoPeliJUnitTest {
 
-    Peli syottoPeli;
+    Peli peli;
     Pelaaja pelaaja;
-    Kaukalo kaukalo;
     Pelaaja A;
 
     public SyottoPeliJUnitTest() {
@@ -37,8 +35,7 @@ public class SyottoPeliJUnitTest {
 
     @Before
     public void setUp() {
-        syottoPeli = new Peli();
-        kaukalo = new Kaukalo();
+        peli = new Peli();
         pelaaja = new Pelaaja(1, 2);
         A = new Pelaaja(4, 3);
     }
@@ -49,14 +46,14 @@ public class SyottoPeliJUnitTest {
 
     @Test
     public void pelaajienMaaranSyottoToimii() {
-        kaukalo.luoPelaajat(4);
-        assertEquals(kaukalo.getPelaajat(), 4);
+        peli.luoPelaajat(4);
+        assertEquals(peli.getPelaajat(), 4);
     }
 
     @Test
     public void pelaajienMaaranSyottoToimii2() {
-        kaukalo.luoPelaajat(11);
-        assertEquals(kaukalo.getPelaajat(), 11);
+        peli.luoPelaajat(11);
+        assertEquals(peli.getPelaajat(), 11);
     }
 
     @Test
@@ -74,20 +71,15 @@ public class SyottoPeliJUnitTest {
     public void pelaajatPaallekkainTosi() {
         A.setX(1);
         A.setY(2);
-        kaukalo.lisaaPelaaja(pelaaja);
-        kaukalo.lisaaPelaaja(A);
-        assertEquals(kaukalo.pelaajatPaallekkain(), true);
+        peli.lisaaPelaaja(pelaaja);
+        peli.lisaaPelaaja(A);
+        assertEquals(peli.pelaajatPaallekkain(), true);
     }
 
     @Test
     public void pelaajatPaallekkainEpatosi() {
-        kaukalo.lisaaPelaaja(pelaaja);
-        kaukalo.lisaaPelaaja(A);
-        assertEquals(kaukalo.pelaajatPaallekkain(), true);
-    }
-
-    @Test
-    public void pelaajienLuontiOnnistuuJarkevillaLuvuilla() {
-        kaukalo.luoPelaajat(1000);
+        peli.lisaaPelaaja(pelaaja);
+        peli.lisaaPelaaja(A);
+        assertEquals(peli.pelaajatPaallekkain(), false);
     }
 }
