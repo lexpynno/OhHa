@@ -6,17 +6,21 @@ package syottopelii.com.mycompany.syottopeli;
 
 /**
  *
- * @author Leo
+ * Luo kellon kayttajan toiveiden mukaan, joka saataa vaikeustasoa ja pelin nopeutta.
  */
 public class Ajastin {
 
     private int aika;
 
     public Ajastin() {
-        this.aika = 2;
+        this.aika = 2000;
     }
 
     public void asetaAika(int i) {
         this.aika = i;
+    }
+
+    public int getAika() {
+        return aika;
     }
 }

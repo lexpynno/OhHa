@@ -8,12 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
+import syottopelii.com.mycompany.syottopeli.PeliLogiikka;
 
 /**
  *
- * @author Leo
+ * Valittaa kayttajan haluamat valinnat eteenpain.
  */
-class Tapahtumakuuntelija implements ActionListener {
+public class Tapahtumakuuntelija implements ActionListener {
 
     private JRadioButton kaks;
     private JRadioButton kolme;
@@ -25,9 +26,10 @@ class Tapahtumakuuntelija implements ActionListener {
     private JRadioButton yhdeksan;
     private JRadioButton kymmenen;
     private JButton nappi;
-    private Peli peli;
+    private PeliLogiikka peli;
 
-    Tapahtumakuuntelija(JRadioButton kaks, JRadioButton kolme, JRadioButton nelja, JRadioButton viisi, JRadioButton kuusi, JRadioButton seitseman, JRadioButton kahdeksan, JRadioButton yhdeksan, JRadioButton kymmenen, JButton nappi, Peli peli) {
+    public Tapahtumakuuntelija(JRadioButton kaks, JRadioButton kolme, JRadioButton nelja, JRadioButton viisi, JRadioButton kuusi,
+            JRadioButton seitseman, JRadioButton kahdeksan, JRadioButton yhdeksan, JRadioButton kymmenen, JButton nappi, PeliLogiikka peli) {
         this.kaks = kaks;
         this.kolme = kolme;
         this.nelja = nelja;
@@ -70,7 +72,7 @@ class Tapahtumakuuntelija implements ActionListener {
         if (ae.getSource() == kymmenen) {
             peli.setPelaajienMaara(10);
         }
-        if(ae.getSource() == nappi) {
+        if (ae.getSource() == nappi) {
             peli.kaynnista();
         }
     }

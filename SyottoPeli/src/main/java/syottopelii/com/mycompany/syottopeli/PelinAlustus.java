@@ -4,27 +4,30 @@
  */
 package syottopelii.com.mycompany.syottopeli;
 
-/**
- *
- * @author Leo
- */
+import syottopelii.com.mycompany.syottopeli.VaikeustasonKuuntelija;
+import syottopelii.com.mycompany.syottopeli.Tapahtumakuuntelija;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+/**
+ *
+ * Luo kyselyn, jossa kayttaja voi valita haluamansa nopeuden ja pelaajien
+ * maaran "syottojen maaran".
+ */
 public class PelinAlustus implements Runnable {
 
     private JFrame frame;
-    private Peli peli;
+    private PeliLogiikka peli;
 
     @Override
     public void run() {
-        peli = new Peli();
+        peli = new PeliLogiikka();
         frame = new JFrame("Pelin alustus");
         frame.setPreferredSize(new Dimension(400, 500));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        
+
         luoKomponentit(frame.getContentPane());
 
         frame.pack();
@@ -49,7 +52,7 @@ public class PelinAlustus implements Runnable {
         JRadioButton kahdeksan = new JRadioButton("8");
         JRadioButton yhdeksan = new JRadioButton("9");
         JRadioButton kymmenen = new JRadioButton("10");
-        
+
         JButton nappi = new JButton("Valmis!");
 
         Tapahtumakuuntelija Tapahtumankuuntelija = new Tapahtumakuuntelija(kaks, kolme, nelja, viisi, kuusi, seitseman, kahdeksan, yhdeksan, kymmenen, nappi, peli);

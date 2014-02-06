@@ -11,28 +11,28 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Leo
+ * Piirtoalusta piirtaa pelin grafiikat.
  */
 public class Piirtoalusta extends JPanel {
 
-    private Peli peli;
+    private PeliLogiikka peli;
 
-    public Piirtoalusta(Peli peli, LayoutManager layout, boolean isDoubleBuffered) {
-
-        this.peli = peli;
-    }
-
-    public Piirtoalusta(Peli peli, LayoutManager layout) {
+    public Piirtoalusta(PeliLogiikka peli, LayoutManager layout, boolean isDoubleBuffered) {
 
         this.peli = peli;
     }
 
-    public Piirtoalusta(Peli peli, boolean isDoubleBuffered) {
+    public Piirtoalusta(PeliLogiikka peli, LayoutManager layout) {
 
         this.peli = peli;
     }
 
-    public Piirtoalusta(Peli peli) {
+    public Piirtoalusta(PeliLogiikka peli, boolean isDoubleBuffered) {
+
+        this.peli = peli;
+    }
+
+    public Piirtoalusta(PeliLogiikka peli) {
         this.peli = peli;
     }
 
@@ -54,7 +54,7 @@ public class Piirtoalusta extends JPanel {
         g.setColor(Color.BLUE);
         g.fillRect(0, 250, 600, 8);
         g.fillRect(0, 500, 600, 8);
-        g.setColor(Color.PINK);
+        g.setColor(Color.BLACK);
         peli.piirra(g);
     }
 }

@@ -7,12 +7,13 @@ package syottopelii.com.mycompany.syottopeli;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JRadioButton;
+import syottopelii.com.mycompany.syottopeli.Ajastin;
 
 /**
  *
- * @author Leo
+ * Valittaa kayttajan haluamat kaskyt eteenpain.
  */
-class VaikeustasonKuuntelija implements ActionListener {
+public class VaikeustasonKuuntelija implements ActionListener {
 
     private JRadioButton mahdoton;
     private JRadioButton vaikea;
@@ -22,7 +23,7 @@ class VaikeustasonKuuntelija implements ActionListener {
     private JRadioButton aloittelija;
     private Ajastin ajastin;
 
-    VaikeustasonKuuntelija(JRadioButton aloittelija, JRadioButton helppo, JRadioButton helpohko, JRadioButton normaali, JRadioButton vaikea, JRadioButton mahdoton) {
+   public VaikeustasonKuuntelija(JRadioButton aloittelija, JRadioButton helppo, JRadioButton helpohko, JRadioButton normaali, JRadioButton vaikea, JRadioButton mahdoton) {
         this.aloittelija = aloittelija;
         this.helpohko = helpohko;
         this.helppo = helppo;

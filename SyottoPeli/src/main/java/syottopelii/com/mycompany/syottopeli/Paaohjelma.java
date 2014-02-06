@@ -4,7 +4,7 @@ import java.util.Scanner;
 import javax.swing.SwingUtilities;
 
 /**
- * Hello world!
+ * Kaynnistaa kaskysarjan, joka johtaa pelin kaynnistymiseen.
  *
  */
 public class Paaohjelma {

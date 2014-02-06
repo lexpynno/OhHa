@@ -3,14 +3,18 @@
  * and open the template in the editor.
  */
 
+import java.awt.Frame;
+import java.awt.image.ImageObserver;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import syottopelii.com.mycompany.syottopeli.Arpoja;
+import syottopelii.com.mycompany.syottopeli.Kayttoliittyma;
 import syottopelii.com.mycompany.syottopeli.Pelaaja;
-import syottopelii.com.mycompany.syottopeli.Peli;
+import syottopelii.com.mycompany.syottopeli.PeliLogiikka;
 
 /**
  *
@@ -18,9 +22,11 @@ import syottopelii.com.mycompany.syottopeli.Peli;
  */
 public class SyottoPeliJUnitTest {
 
-    Peli peli;
+    Arpoja arpoja;
+    PeliLogiikka peli;
     Pelaaja pelaaja;
     Pelaaja A;
+    Kayttoliittyma kayttoliittyma;
 
     public SyottoPeliJUnitTest() {
     }
@@ -35,9 +41,11 @@ public class SyottoPeliJUnitTest {
 
     @Before
     public void setUp() {
-        peli = new Peli();
+        arpoja = new Arpoja();
+        peli = new PeliLogiikka();
         pelaaja = new Pelaaja(1, 2);
         A = new Pelaaja(4, 3);
+        kayttoliittyma = new Kayttoliittyma(peli);
     }
 
     @After
@@ -81,5 +89,11 @@ public class SyottoPeliJUnitTest {
         peli.lisaaPelaaja(pelaaja);
         peli.lisaaPelaaja(A);
         assertEquals(peli.pelaajatPaallekkain(), false);
+    }
+
+    @Test
+    public void pelaajatOikeissaKoordinaateissa() {
+        assertEquals(pelaaja.getX(), 1);
+        assertEquals(pelaaja.getY(), 2);
     }
 }

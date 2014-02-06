@@ -8,17 +8,19 @@ import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
+import syottopelii.com.mycompany.syottopeli.PeliLogiikka;
+import syottopelii.com.mycompany.syottopeli.Piirtoalusta;
 
 /**
  *
- * @author Leo
+ * Kayttoliittyma kaynnistaa syottopelin kun alustus on valmis.
  */
 public class Kayttoliittyma implements Runnable {
  
     private JFrame frame;
-    private Peli peli;
+    private PeliLogiikka peli;
  
-    public Kayttoliittyma(Peli peli) {
+    public Kayttoliittyma(PeliLogiikka peli) {
         this.peli = peli;
     }
  
