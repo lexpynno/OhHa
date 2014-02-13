@@ -2,17 +2,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package syottopelii.com.mycompany.syottopeli;
+package syottopeli.syottopeliLogiikka.Kayttis;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
-import syottopelii.com.mycompany.syottopeli.PeliLogiikka;
+import syottopeli.syottopeliLogiikka.PeliLogiikka;
+import syottopeli.syottopeliLogiikka.PeliLogiikka;
 
 /**
  *
- * Valittaa kayttajan haluamat valinnat eteenpain.
+ * Valittaa kayttajan haluamat valinnat pelaajien maarasta eteenpain ja kaynnistaa pelin.
  */
 public class Tapahtumakuuntelija implements ActionListener {
 

@@ -2,12 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package syottopelii.com.mycompany.syottopeli;
+package syottopeli.syottopeliLogiikka.Kayttis;
 
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import syottopelii.com.mycompany.syottopeli.PeliLogiikka;
+import syottopeli.syottopeliLogiikka.PeliLogiikka;
+import syottopeli.syottopeliLogiikka.PeliLogiikka;
 
 /**
  *
@@ -27,17 +28,24 @@ public class NappaimistonKuuntelija implements KeyListener {
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
+            peli.pelaajaOnPohjoisessa();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
+            peli.pelaajaOnKoilisessa();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
-            peli.syotaItaan();
+            peli.pelaajaOnIdassa();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
+            peli.pelaajaOnKaakossa();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
-            peli.syotaEtelaan();
+            peli.pelaajaOnEtelassa();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
+            peli.pelaajaOnLounaassa();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
+            peli.pelaajaOnLannessa();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
+            peli.pelaajaOnLuoteessa();
         }
         k.repaint();
+
     }
 
     @Override

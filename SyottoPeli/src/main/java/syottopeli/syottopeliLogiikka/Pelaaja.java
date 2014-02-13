@@ -1,15 +1,16 @@
 /*
  * 
  */
-package syottopelii.com.mycompany.syottopeli;
+package syottopeli.syottopeliLogiikka;
 
 import java.awt.Graphics;
 
 /**
  *
- * 
- * 
- * Pelaaja luo koordinaatistoon arvojen x ja y perusteella pallon "pelaajan", jolla on totuusarvo kiekko.
+ *
+ *
+ * Pelaaja luo koordinaatistoon arvojen x ja y perusteella pallon "pelaajan",
+ * jolla on totuusarvo kiekko.
  */
 public class Pelaaja {
 
@@ -17,6 +18,7 @@ public class Pelaaja {
     private int x;
     private int y;
     private boolean kiekko;
+    private boolean kiekkoOllutHallussa;
 
     public void setX(int x) {
         this.x = x;
@@ -33,8 +35,13 @@ public class Pelaaja {
      *
      */
     public void setKiekko(boolean kiekko) {
-
+        if (kiekko == true) {
+            kiekkoOllutHallussa = true;
+        }
         this.kiekko = kiekko;
+    }
+    public boolean OnkoKiekkoOllutHallussa() {
+        return this.OnkoKiekkoOllutHallussa();
     }
 
     public int getX() {
@@ -59,7 +66,7 @@ public class Pelaaja {
      * luo pelaajan koordinaateilla x ja y
      */
     public Pelaaja(int x, int y) {
-
+        this.kiekkoOllutHallussa = false;
         this.x = x;
         this.y = y;
         this.kiekko = false;
@@ -75,8 +82,9 @@ public class Pelaaja {
      * @return totuusarvo true jos koordinaatit kayttamattomia
      */
     public boolean ovatkotKoordinaatitVapaina(int x, int y) {
-
-        if (this.x == x && this.y == y) {
+        int absX = Math.abs(this.x - x);
+        int absY = Math.abs(this.y - y);
+        if (absX < 10 && absY < 10) {
             return false;
         } else {
             return true;

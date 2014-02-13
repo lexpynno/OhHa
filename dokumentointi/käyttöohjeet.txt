@@ -3,5 +3,5 @@ Valitse
 -Vaikeustaso(aikamääre)
 
 Näppäimet: 
--Nuolinäppäimet ohjaavat syötön
--Välilyönti ampuu maalin, mikäli esiehdot täyttyvät
+-Numeronappaimet 1 - 9, 5 poisluettuna ohjaavat syötön ilmansuuntien mukaan.
+-Välilyönti ampuu maalin, mikäli esiehdot täyttyvät.

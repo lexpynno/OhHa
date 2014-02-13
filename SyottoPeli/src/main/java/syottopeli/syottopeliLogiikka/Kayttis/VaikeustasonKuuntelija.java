@@ -2,16 +2,17 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package syottopelii.com.mycompany.syottopeli;
+package syottopeli.syottopeliLogiikka.Kayttis;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JRadioButton;
-import syottopelii.com.mycompany.syottopeli.Ajastin;
+import syottopeli.syottopeliLogiikka.Ajastin;
+import syottopeli.syottopeliLogiikka.Ajastin;
 
 /**
  *
- * Valittaa kayttajan haluamat kaskyt eteenpain.
+ * Valittaa kayttajan haluamat kaskyt eteenpain ajastimelle.
  */
 public class VaikeustasonKuuntelija implements ActionListener {
 

@@ -2,14 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package syottopelii.com.mycompany.syottopeli;
+package syottopeli.syottopeliLogiikka.Kayttis;
 
-import syottopelii.com.mycompany.syottopeli.VaikeustasonKuuntelija;
-import syottopelii.com.mycompany.syottopeli.Tapahtumakuuntelija;
+import syottopeli.syottopeliLogiikka.Kayttis.VaikeustasonKuuntelija;
+import syottopeli.syottopeliLogiikka.Kayttis.Tapahtumakuuntelija;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import syottopeli.syottopeliLogiikka.PeliLogiikka;
 
 /**
  *

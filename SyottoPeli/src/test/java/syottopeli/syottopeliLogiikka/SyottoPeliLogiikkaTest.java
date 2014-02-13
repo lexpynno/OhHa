@@ -1,3 +1,5 @@
+package syottopeli.syottopeliLogiikka;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -11,16 +13,16 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import syottopelii.com.mycompany.syottopeli.Arpoja;
-import syottopelii.com.mycompany.syottopeli.Kayttoliittyma;
-import syottopelii.com.mycompany.syottopeli.Pelaaja;
-import syottopelii.com.mycompany.syottopeli.PeliLogiikka;
+import syottopeli.syottopeliLogiikka.Arpoja;
+import syottopeli.syottopeliLogiikka.Kayttis.Kayttoliittyma;
+import syottopeli.syottopeliLogiikka.Pelaaja;
+import syottopeli.syottopeliLogiikka.PeliLogiikka;
 
 /**
  *
  * @author Leo
  */
-public class SyottoPeliJUnitTest {
+public class SyottoPeliLogiikkaTest {
 
     Arpoja arpoja;
     PeliLogiikka peli;
@@ -28,7 +30,7 @@ public class SyottoPeliJUnitTest {
     Pelaaja A;
     Kayttoliittyma kayttoliittyma;
 
-    public SyottoPeliJUnitTest() {
+    public SyottoPeliLogiikkaTest() {
     }
 
     @BeforeClass
@@ -44,7 +46,7 @@ public class SyottoPeliJUnitTest {
         arpoja = new Arpoja();
         peli = new PeliLogiikka();
         pelaaja = new Pelaaja(1, 2);
-        A = new Pelaaja(4, 3);
+        A = new Pelaaja(40, 30);
         kayttoliittyma = new Kayttoliittyma(peli);
     }
 
@@ -65,35 +67,32 @@ public class SyottoPeliJUnitTest {
     }
 
     @Test
-    public void pelaajallaKiekkoToimiiKunTrue() {
-        pelaaja.setKiekko(true);
-        assertEquals(pelaaja.onkoKiekkoHallussa(), true);
+    public void kaynnistysKaynnistaaPelin() {
+        peli.kaynnista();
+        assertEquals(peli.getKaynnissa(), true);
     }
 
     @Test
-    public void pelaajallaKiekkoToimiiKunFalse() {
-        assertEquals(pelaaja.onkoKiekkoHallussa(), false);
+    public void kaynnissaFalseAlussa() {
+        assertEquals(peli.getKaynnissa(), false);
     }
 
     @Test
-    public void pelaajatPaallekkainTosi() {
-        A.setX(1);
-        A.setY(2);
-        peli.lisaaPelaaja(pelaaja);
-        peli.lisaaPelaaja(A);
-        assertEquals(peli.pelaajatPaallekkain(), true);
+    public void keskeytysAsettaaKaynnistysarvonFalse() {
+        peli.kaynnista();
+        peli.keskeyta();
+        assertEquals(peli.getKaynnissa(), false);
     }
 
     @Test
-    public void pelaajatPaallekkainEpatosi() {
-        peli.lisaaPelaaja(pelaaja);
-        peli.lisaaPelaaja(A);
-        assertEquals(peli.pelaajatPaallekkain(), false);
+    public void setPelaajienMaaraAsettaaMuuttujanMaaraArvon() {
+        peli.setPelaajienMaara(4);
+        assertEquals(peli.getMaara(), 4);
     }
 
     @Test
-    public void pelaajatOikeissaKoordinaateissa() {
-        assertEquals(pelaaja.getX(), 1);
-        assertEquals(pelaaja.getY(), 2);
+    public void pelaajiaPaallekkain() {
+        peli.luoPelaajat(1000);
+        assertTrue(peli.pelaajatPaallekkain());
     }
 }

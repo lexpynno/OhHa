@@ -16,3 +16,7 @@ jonka jälkeen koodin kirjoittaminen ja ensinmäisten testien teko.
 6.2
 Noin 5 tuntia tyoskentelya, luokkakaavion uudelleen teko, sekvenssikaaviot, lisaa testeja, 
 koodin parannusta ja lisayksia seka javadocin aloittaminen.
+
+13.2
+kuutisen tuntia vierähti taas aiheen parissa. Viimeistelya vailla valmis tyo. 
+Kardinaalisuuntien toimintaan saaminen vaatii viela tyota. Pit-raporttejakaan en saanut toimimaan millaan.

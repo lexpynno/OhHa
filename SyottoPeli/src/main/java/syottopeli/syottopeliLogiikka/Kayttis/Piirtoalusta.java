@@ -2,12 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package syottopelii.com.mycompany.syottopeli;
+package syottopeli.syottopeliLogiikka.Kayttis;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.LayoutManager;
 import javax.swing.JPanel;
+import syottopeli.syottopeliLogiikka.PeliLogiikka;
 
 /**
  *
@@ -36,7 +37,10 @@ public class Piirtoalusta extends JPanel {
         this.peli = peli;
     }
 
-    protected void paintComponent(Graphics g) { 
+    /**
+     * Luo kentan viivat ja ympyrat.
+     */
+    protected void paintComponent(Graphics g) {
         g.setColor(Color.red);
         g.fillRect(0, 50, 600, 2);
         g.fillRect(0, 375, 600, 8);

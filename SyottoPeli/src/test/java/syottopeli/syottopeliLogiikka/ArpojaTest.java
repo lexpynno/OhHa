@@ -1,3 +1,5 @@
+package syottopeli.syottopeliLogiikka;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -9,16 +11,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import syottopelii.com.mycompany.syottopeli.Arpoja;
-import syottopelii.com.mycompany.syottopeli.Kayttoliittyma;
-import syottopelii.com.mycompany.syottopeli.PeliLogiikka;
-import syottopelii.com.mycompany.syottopeli.PelinAlustus;
+import syottopeli.syottopeliLogiikka.Arpoja;
+import syottopeli.syottopeliLogiikka.Kayttis.Kayttoliittyma;
+import syottopeli.syottopeliLogiikka.PeliLogiikka;
 
 /**
  *
  * @author Leo
  */
-public class ArpojaJUnitTest {
+public class ArpojaTest {
 
     Arpoja arpoja;
     Kayttoliittyma kayttoliittyma;
@@ -27,7 +28,7 @@ public class ArpojaJUnitTest {
     int leveys;
     boolean testi;
 
-    public ArpojaJUnitTest() {
+    public ArpojaTest() {
     }
 
     @BeforeClass
@@ -59,21 +60,21 @@ public class ArpojaJUnitTest {
 
     @Test
     public void arpojaAntaaKorkeuksiaJotkaSijaitsevatKentalla() {
-        if (korkeus > arpoja.satunnainenKoordinaattiX()) {
+        if (600 > arpoja.satunnainenKoordinaattiX()) {
             testi = true;
         } else {
             testi = false;
-            assertEquals(testi, true);
+            assertTrue(testi);
         }
     }
 
     @Test
     public void arpojaAntaaLeveyksiaJotkaSijaitsevatKentalla() {
-        if (leveys > arpoja.satunnainenKoordinaattiX()) {
+        if (800 > arpoja.satunnainenKoordinaattiX()) {
             testi = true;
         } else {
             testi = false;
         }
-        assertEquals(testi, true);
+        assertTrue(testi);
     }
 }

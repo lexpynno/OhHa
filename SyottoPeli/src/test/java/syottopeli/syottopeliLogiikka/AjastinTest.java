@@ -1,3 +1,5 @@
+package syottopeli.syottopeliLogiikka;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -9,17 +11,17 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import syottopelii.com.mycompany.syottopeli.Ajastin;
+import syottopeli.syottopeliLogiikka.Ajastin;
 
 /**
  *
  * @author Leo
  */
-public class AjastinJUnitTest {
+public class AjastinTest {
 
     Ajastin ajastin;
 
-    public AjastinJUnitTest() {
+    public AjastinTest() {
     }
 
     @BeforeClass
