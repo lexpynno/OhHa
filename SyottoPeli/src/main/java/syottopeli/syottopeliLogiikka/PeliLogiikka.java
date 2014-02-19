@@ -4,11 +4,13 @@
  */
 package syottopeli.syottopeliLogiikka;
 
-import syottopeli.syottopeliLogiikka.Kayttis.Kayttoliittyma;
+import syottopeliLogiikka.Kayttis.Kayttoliittyma;
 import java.awt.Graphics;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.SwingUtilities;
+import syottopeliLogiikka.Kayttis.AjastuksenKaskyt;
 
 /**
  *
@@ -17,16 +19,23 @@ import javax.swing.SwingUtilities;
  */
 public class PeliLogiikka {
 
+    private Ajastin ajastin;
     private ArrayList<Pelaaja> pelaajat;
     private Arpoja arpoja;
     private int maara;
     private boolean kaynnissa;
+    private AjastuksenKaskyt a;
 
     public PeliLogiikka() {
+        ajastin = new Ajastin(a);
         arpoja = new Arpoja();
         pelaajat = new ArrayList<Pelaaja>();
         maara = 5;
         kaynnissa = false;
+    }
+
+    public Ajastin getAjastin() {
+        return ajastin;
     }
     /* Luo halutun maaran pelaajia kentalle seka kaynnistaa kayttoliittyman. */
 
@@ -45,15 +54,14 @@ public class PeliLogiikka {
         getKiekollinen().setKiekko(false);
     }
 
-    public void kaikillaOllutKiekko() {
+    public boolean kaikillaOllutKiekko() {
         for (Pelaaja pelaaja : pelaajat) {
             if (pelaaja.OnkoKiekkoOllutHallussa() == false) {
-                break;
+                return false;
             }
         }
-        keskeyta();
+        return true;
     }
-
 
     public boolean getKaynnissa() {
         return kaynnissa;
@@ -256,9 +264,8 @@ public class PeliLogiikka {
                     arpoja.satunnainenKoordinaattiY()));
             apu++;
         }
-            kiekkoYlimmalle();
-        }
-    
+        kiekkoYlimmalle();
+    }
 
     /**
      * Etsii ylimman pelaajan ja asettaa sen kiekolliseksi.
@@ -320,7 +327,7 @@ public class PeliLogiikka {
         for (Pelaaja pelaaja : pelaajat) {
             pelaaja.piirra(g);
         }
-
+        ajastin.Piirra(g, getKiekollinen().getX(), getKiekollinen().getY());
     }
 
     /**

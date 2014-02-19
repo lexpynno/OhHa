@@ -2,12 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>SyottoPeli</groupId>
-    <artifactId>SyottoPeli</artifactId>
+    <groupId>syottopeli</groupId>
+    <artifactId>syottopeli</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>SyottoPeli</name>
+    <name>syottopeli</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -49,18 +49,18 @@
                 <version>0.30</version>
                 <configuration>
                     <targetClasses>
-                        <param>syottopeli.syottopeliLogiikka.Pelaaja.*</param>
-                        <param>syottopeli.syottopeliLogiikka.Arpoja.*</param>
-                        <param>syottopeli.syottopeliLogiikka.Ajastin.*</param>
-                        <param>syottopeli.syottopeliLogiikka.PeliLogiikka.*</param>
-                        <param>syottopeli.syottopeliLogiikka.Paaohjelma.*</param>
+                        <param>syottopeliLogiikka.Pelaaja*</param>
+                        <param>syottopeliLogiikka.Arpoja*</param>
+                        <param>syottopeliLogiikka.Ajastin*</param>
+                        <param>syottopeliLogiikka.PeliLogiikka*</param>
+                        <param>syottopeliLogiikka.Paaohjelma*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>syottopeli.syottopeliLogiikka.Pelaaja.*</param>
-                        <param>syottopeli.syottopeliLogiikka.Arpoja.*</param>
-                        <param>syottopeli.syottopeliLogiikka.Ajastin.*</param>
-                        <param>syottopeli.syottopeliLogiikka.PeliLogiikka.*</param>
-                        <param>syottopeli.syottopeliLogiikka.Paaohjelma.*</param>
+                        <param>syottopeliLogiikka.Pelaaja*</param>
+                        <param>syottopeliLogiikka.Arpoja*</param>
+                        <param>syottopeliLogiikka.Ajastin*</param>
+                        <param>syottopeliLogiikka.PeliLogiikka*</param>
+                        <param>syottopeliLogiikka.Paaohjelma*</param>
                     </targetTests>
                 </configuration>
             </plugin>

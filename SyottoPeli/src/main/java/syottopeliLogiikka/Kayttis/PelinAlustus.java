@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package syottopeli.syottopeliLogiikka.Kayttis;
+package syottopeliLogiikka.Kayttis;
 
-import syottopeli.syottopeliLogiikka.Kayttis.VaikeustasonKuuntelija;
-import syottopeli.syottopeliLogiikka.Kayttis.Tapahtumakuuntelija;
+import syottopeliLogiikka.Kayttis.VaikeustasonKuuntelija;
+import syottopeliLogiikka.Kayttis.Tapahtumakuuntelija;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
@@ -98,7 +98,7 @@ public class PelinAlustus implements Runnable {
         JRadioButton helppo = new JRadioButton("Helppo (5 sekunttia)");
         JRadioButton aloittelija = new JRadioButton("Aloittelija (10 sekunttia)");
 
-        VaikeustasonKuuntelija VaikeustasonKuuntelija = new VaikeustasonKuuntelija(aloittelija, helppo, helpohko, normaali, vaikea, mahdoton);
+        VaikeustasonKuuntelija VaikeustasonKuuntelija = new VaikeustasonKuuntelija(aloittelija, helppo, helpohko, normaali, vaikea, mahdoton, peli);
 
         mahdoton.addActionListener(VaikeustasonKuuntelija);
         vaikea.addActionListener(VaikeustasonKuuntelija);

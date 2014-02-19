@@ -1,4 +1,4 @@
-package syottopeli.syottopeliLogiikka;
+package syottopeliLogiikka;
 
 /*
  * To change this template, choose Tools | Templates
@@ -14,7 +14,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import syottopeli.syottopeliLogiikka.Arpoja;
-import syottopeli.syottopeliLogiikka.Kayttis.Kayttoliittyma;
+import syottopeliLogiikka.Kayttis.Kayttoliittyma;
 import syottopeli.syottopeliLogiikka.Pelaaja;
 import syottopeli.syottopeliLogiikka.PeliLogiikka;
 
@@ -22,7 +22,7 @@ import syottopeli.syottopeliLogiikka.PeliLogiikka;
  *
  * @author Leo
  */
-public class SyottoPeliLogiikkaTest {
+public class PeliLogiikkaTest {
 
     Arpoja arpoja;
     PeliLogiikka peli;
@@ -30,7 +30,7 @@ public class SyottoPeliLogiikkaTest {
     Pelaaja A;
     Kayttoliittyma kayttoliittyma;
 
-    public SyottoPeliLogiikkaTest() {
+    public PeliLogiikkaTest() {
     }
 
     @BeforeClass

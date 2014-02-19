@@ -14,7 +14,6 @@ import java.awt.Graphics;
  */
 public class Pelaaja {
 
-    private Ajastin ajastin;
     private int x;
     private int y;
     private boolean kiekko;
@@ -70,7 +69,6 @@ public class Pelaaja {
         this.x = x;
         this.y = y;
         this.kiekko = false;
-        ajastin = new Ajastin();
     }
 
     /**

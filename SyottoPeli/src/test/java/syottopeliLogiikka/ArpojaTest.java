@@ -1,10 +1,9 @@
-package syottopeli.syottopeliLogiikka;
+package syottopeliLogiikka;
 
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -12,7 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import syottopeli.syottopeliLogiikka.Arpoja;
-import syottopeli.syottopeliLogiikka.Kayttis.Kayttoliittyma;
+import syottopeliLogiikka.Kayttis.Kayttoliittyma;
 import syottopeli.syottopeliLogiikka.PeliLogiikka;
 
 /**
@@ -26,7 +25,6 @@ public class ArpojaTest {
     PeliLogiikka peli;
     int korkeus;
     int leveys;
-    boolean testi;
 
     public ArpojaTest() {
     }
@@ -42,11 +40,10 @@ public class ArpojaTest {
     @Before
     public void setUp() {
         peli = new PeliLogiikka();
-        kayttoliittyma = new Kayttoliittyma(peli);
         arpoja = new Arpoja();
+        kayttoliittyma = new Kayttoliittyma(peli);
         leveys = kayttoliittyma.getFrame().getWidth();
         korkeus = kayttoliittyma.getFrame().getHeight();
-        testi = true;
     }
 
     @After
@@ -60,21 +57,17 @@ public class ArpojaTest {
 
     @Test
     public void arpojaAntaaKorkeuksiaJotkaSijaitsevatKentalla() {
-        if (600 > arpoja.satunnainenKoordinaattiX()) {
-            testi = true;
-        } else {
-            testi = false;
-            assertTrue(testi);
+        for (int i = 0; i < 50; i++) {
+            int luku = arpoja.satunnainenKoordinaattiY();
+            assertTrue(luku < korkeus);
         }
     }
 
     @Test
     public void arpojaAntaaLeveyksiaJotkaSijaitsevatKentalla() {
-        if (800 > arpoja.satunnainenKoordinaattiX()) {
-            testi = true;
-        } else {
-            testi = false;
+        for (int i = 0; i < 50; i++) {
+            int luku = arpoja.satunnainenKoordinaattiX();
+            assertTrue(luku < leveys);
         }
-        assertTrue(testi);
     }
 }

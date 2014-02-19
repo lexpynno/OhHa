@@ -2,13 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package syottopeli.syottopeliLogiikka.Kayttis;
+package syottopeliLogiikka.Kayttis;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JRadioButton;
 import syottopeli.syottopeliLogiikka.Ajastin;
 import syottopeli.syottopeliLogiikka.Ajastin;
+import syottopeli.syottopeliLogiikka.PeliLogiikka;
 
 /**
  *
@@ -22,36 +23,37 @@ public class VaikeustasonKuuntelija implements ActionListener {
     private JRadioButton helpohko;
     private JRadioButton helppo;
     private JRadioButton aloittelija;
-    private Ajastin ajastin;
+    private PeliLogiikka peli;
 
-   public VaikeustasonKuuntelija(JRadioButton aloittelija, JRadioButton helppo, JRadioButton helpohko, JRadioButton normaali, JRadioButton vaikea, JRadioButton mahdoton) {
-        this.aloittelija = aloittelija;
+    public VaikeustasonKuuntelija(JRadioButton mahdoton, JRadioButton vaikea, JRadioButton normaali, JRadioButton helpohko, JRadioButton helppo, JRadioButton aloittelija, PeliLogiikka peli) {
+        this.mahdoton = mahdoton;
+        this.vaikea = vaikea;
+        this.normaali = normaali;
         this.helpohko = helpohko;
         this.helppo = helppo;
-        this.normaali = normaali;
-        this.vaikea = vaikea;
-        this.mahdoton = mahdoton;
+        this.aloittelija = aloittelija;
+        this.peli = peli;
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == aloittelija) {
-        ajastin.asetaAika(10000);
+            peli.getAjastin().asetaAika(10000);
         }
         if (ae.getSource() == helpohko) {
-        ajastin.asetaAika(5000);
+            peli.getAjastin().asetaAika(5000);
         }
         if (ae.getSource() == helppo) {
-        ajastin.asetaAika(3000);
+            peli.getAjastin().asetaAika(3000);
         }
         if (ae.getSource() == normaali) {
-        ajastin.asetaAika(2000);
+            peli.getAjastin().asetaAika(2000);
         }
         if (ae.getSource() == vaikea) {
-        ajastin.asetaAika(1000);
+            peli.getAjastin().asetaAika(1000);
         }
         if (ae.getSource() == mahdoton) {
-        ajastin.asetaAika(500);
+            peli.getAjastin().asetaAika(500);
         }
     }
 }

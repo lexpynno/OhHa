@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package syottopeli.syottopeliLogiikka.Kayttis;
+package syottopeliLogiikka.Kayttis;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -29,6 +30,8 @@ public class NappaimistonKuuntelija implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
             peli.pelaajaOnPohjoisessa();
+
+            peli.getAjastin().restart();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
             peli.pelaajaOnKoilisessa();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
@@ -44,6 +47,9 @@ public class NappaimistonKuuntelija implements KeyListener {
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
             peli.pelaajaOnLuoteessa();
         }
+        if (peli.kaikillaOllutKiekko() == true) {
+            k.setBackground(Color.yellow);
+        }
         k.repaint();
 
     }
@@ -55,6 +61,6 @@ public class NappaimistonKuuntelija implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        k.repaint();
     }
 }

@@ -1,4 +1,4 @@
-package syottopeli.syottopeliLogiikka;
+package syottopeliLogiikka;
 
 /*
  * To change this template, choose Tools | Templates

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package syottopeli.syottopeliLogiikka.Kayttis;
+package syottopeliLogiikka.Kayttis;
 
 import java.awt.Container;
 import java.awt.Dimension;
@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import syottopeli.syottopeliLogiikka.PeliLogiikka;
 import syottopeli.syottopeliLogiikka.PeliLogiikka;
-import syottopeli.syottopeliLogiikka.Kayttis.Piirtoalusta;
+import syottopeliLogiikka.Kayttis.Piirtoalusta;
 
 /**
  *
@@ -27,7 +27,7 @@ public class Kayttoliittyma implements Runnable {
  
     @Override
     public void run() {
-        frame = new JFrame();
+        frame = new JFrame("Syottopeli");
         frame.setPreferredSize(new Dimension(600, 800));
  
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

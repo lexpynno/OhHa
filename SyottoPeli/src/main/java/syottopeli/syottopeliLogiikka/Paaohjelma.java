@@ -1,6 +1,6 @@
 package syottopeli.syottopeliLogiikka;
 
-import syottopeli.syottopeliLogiikka.Kayttis.PelinAlustus;
+import syottopeliLogiikka.Kayttis.PelinAlustus;
 import java.util.Scanner;
 import javax.swing.SwingUtilities;
 
