@@ -6,11 +6,12 @@ package syottopeli.syottopeliLogiikka;
 
 import syottopeliLogiikka.Kayttis.Kayttoliittyma;
 import java.awt.Graphics;
-import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import java.util.Scanner;
 import javax.swing.SwingUtilities;
+import javax.swing.Timer;
 import syottopeliLogiikka.Kayttis.AjastuksenKaskyt;
+import syottopeliLogiikka.Kayttis.Piirtoalusta;
 
 /**
  *
@@ -25,6 +26,7 @@ public class PeliLogiikka {
     private int maara;
     private boolean kaynnissa;
     private AjastuksenKaskyt a;
+    private Piirtoalusta alusta;
 
     public PeliLogiikka() {
         ajastin = new Ajastin(a);
@@ -32,13 +34,22 @@ public class PeliLogiikka {
         pelaajat = new ArrayList<Pelaaja>();
         maara = 5;
         kaynnissa = false;
+
     }
 
     public Ajastin getAjastin() {
         return ajastin;
     }
-    /* Luo halutun maaran pelaajia kentalle seka kaynnistaa kayttoliittyman. */
 
+    public AjastuksenKaskyt getAjastustenkaskyt() {
+        return a;
+    }
+
+    public Piirtoalusta getAlusta() {
+        return this.alusta;
+    }
+
+    /* Luo halutun maaran pelaajia kentalle seka kaynnistaa kayttoliittyman. */
     public void kaynnista() {
         luoPelaajat(maara);
         kaynnissa = true;
@@ -74,7 +85,6 @@ public class PeliLogiikka {
     /**
      * Tarkistaako onko kentalla pelaajia idassa.
      *
-     * @param Pelaaja
      */
     public void pelaajaOnIdassa() {
         Pelaaja kiekollinen = getKiekollinen();
@@ -256,6 +266,8 @@ public class PeliLogiikka {
 
     /**
      * Luo halutun maaran pelaajia satunnaisilla koordinaateilla.
+     *
+     * @param pelaajienMaara
      */
     public void luoPelaajat(int pelaajienMaara) {
         int apu = 0;
@@ -310,7 +322,7 @@ public class PeliLogiikka {
     /**
      * Lisaa Pelaajan listaan.
      *
-     * @param Pelaaja
+     * @param pelaaja
      */
     public void lisaaPelaaja(Pelaaja pelaaja) {
         pelaajat.add(pelaaja);
@@ -321,17 +333,22 @@ public class PeliLogiikka {
     }
 
     /**
-     * Piirtaa jokaisen pelaajan erikseen.
+     * Piirtaa jokaisen pelaajan eriks
+     *
+     * @param g
      */
     public void piirra(Graphics g) {
         for (Pelaaja pelaaja : pelaajat) {
             pelaaja.piirra(g);
         }
-        ajastin.Piirra(g, getKiekollinen().getX(), getKiekollinen().getY());
+//        ajastin.Piirra(g, getKiekollinen().getX(), getKiekollinen().getY());
     }
 
     /**
-     * Asettaa halutun pelaajien maaran muistiin.
+     * Asettaa halutun pelaajien maaran muistiin.a = new
+     * AjastuksenKaskyt(alusta, peli);
+     *
+     * @param i
      */
     public void setPelaajienMaara(int i) {
         this.maara = i;

@@ -34,7 +34,7 @@ public class AjastinTest {
 
     @Before
     public void setUp() {
-        ajastin = new Ajastin();
+        
     }
 
     @After

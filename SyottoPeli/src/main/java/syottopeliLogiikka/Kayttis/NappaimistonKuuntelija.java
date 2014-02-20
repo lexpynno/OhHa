@@ -30,26 +30,33 @@ public class NappaimistonKuuntelija implements KeyListener {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD8) {
             peli.pelaajaOnPohjoisessa();
-
-            peli.getAjastin().restart();
+            peli.getAjastin().kaynnisty();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD9) {
             peli.pelaajaOnKoilisessa();
+            peli.getAjastin().kaynnisty();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD6) {
             peli.pelaajaOnIdassa();
+            peli.getAjastin().kaynnisty();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD3) {
             peli.pelaajaOnKaakossa();
+            peli.getAjastin().kaynnisty();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD2) {
             peli.pelaajaOnEtelassa();
+            peli.getAjastin().kaynnisty();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD1) {
             peli.pelaajaOnLounaassa();
+            peli.getAjastin().kaynnisty();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD4) {
             peli.pelaajaOnLannessa();
+            peli.getAjastin().kaynnisty();
         } else if (e.getKeyCode() == KeyEvent.VK_NUMPAD7) {
             peli.pelaajaOnLuoteessa();
+            peli.getAjastin().kaynnisty();
         }
         if (peli.kaikillaOllutKiekko() == true) {
             k.setBackground(Color.yellow);
         }
+
         k.repaint();
 
     }
@@ -61,6 +68,5 @@ public class NappaimistonKuuntelija implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        k.repaint();
     }
 }

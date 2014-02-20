@@ -40,7 +40,7 @@ public class Pelaaja {
         this.kiekko = kiekko;
     }
     public boolean OnkoKiekkoOllutHallussa() {
-        return this.OnkoKiekkoOllutHallussa();
+        return this.kiekkoOllutHallussa;
     }
 
     public int getX() {

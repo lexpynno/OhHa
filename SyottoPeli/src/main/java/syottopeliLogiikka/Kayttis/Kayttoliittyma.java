@@ -17,37 +17,47 @@ import syottopeliLogiikka.Kayttis.Piirtoalusta;
  * Kayttoliittyma kaynnistaa syottopelin kun alustus on valmis.
  */
 public class Kayttoliittyma implements Runnable {
- 
+
     private JFrame frame;
     private PeliLogiikka peli;
- 
+    private AjastuksenKaskyt a;
+
+    /**
+     *
+     * @param peli
+     */
     public Kayttoliittyma(PeliLogiikka peli) {
         this.peli = peli;
+
     }
- 
+
+    /**
+     *
+     */
     @Override
     public void run() {
         frame = new JFrame("Syottopeli");
         frame.setPreferredSize(new Dimension(600, 800));
- 
+
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
- 
+
         luoKomponentit(frame.getContentPane());
         lisaaKuuntelijat();
- 
+
         frame.pack();
         frame.setVisible(true);
     }
- 
+
     private void luoKomponentit(Container container) {
         Piirtoalusta alusta = new Piirtoalusta(peli);
+        a = new AjastuksenKaskyt(alusta, peli);
         container.add(alusta);
     }
- 
+
     private void lisaaKuuntelijat() {
-    frame.addKeyListener(new NappaimistonKuuntelija(frame, peli));
+        frame.addKeyListener(new NappaimistonKuuntelija(frame, peli));
     }
- 
+
     public JFrame getFrame() {
         return frame;
     }

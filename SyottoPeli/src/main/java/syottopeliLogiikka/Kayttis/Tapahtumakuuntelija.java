@@ -75,6 +75,7 @@ public class Tapahtumakuuntelija implements ActionListener {
         }
         if (ae.getSource() == nappi) {
             peli.kaynnista();
+            
         }
     }
 }

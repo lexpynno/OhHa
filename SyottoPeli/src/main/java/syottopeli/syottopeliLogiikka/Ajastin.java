@@ -19,31 +19,38 @@ public class Ajastin extends Timer {
 
     public Ajastin(ActionListener al) {
         super(2000, al);
+        aika = 2000;
         super.setDelay(200);
         super.setRepeats(true);
+        super.start();
     }
 
     /**
      *
      * @return
      */
-    public void AjastinKaynnisty() {
-        super.start();
+    public void kaynnisty() {
+        super.restart();
     }
 
-    public void AjastinPysahdy() {
+    public void pysahdy() {
         super.stop();
     }
 
     public void uudelleenKaynnistys() {
-        aika = 0;
+        super.restart();
     }
 
     public void asetaAika(int i) {
         super.setDelay(i);
+        aika = i;
     }
 
-    public int getAika() {
+    public String getAika() {
+        return "" + aika;
+    }
+
+    public int getAikaInt() {
         return aika;
     }
 
@@ -51,19 +58,9 @@ public class Ajastin extends Timer {
         aika -= 200;
         if (aika < 0) {
         }
-    }
+    } 
 
-    public void setAika(int i) {
-        aika = i;
-    }
-
-    public void Piirra(Graphics g, int x, int y) {
-
-        g.fillRect(x, y - 30, 5 - aika, 20);
-
-    }
-
-    private void piirraHavio(Graphics g) {
-        g.drawLine(aika, aika, 99, 99);
-    }
+//    public void Piirra(Graphics g, int x, int y) {
+//        g.fillRect(x, y - 30, 5 + aika, 20);
+//    }
 }

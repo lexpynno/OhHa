@@ -7,6 +7,7 @@ package syottopeliLogiikka.Kayttis;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.LayoutManager;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import syottopeli.syottopeliLogiikka.PeliLogiikka;
 
@@ -17,24 +18,17 @@ import syottopeli.syottopeliLogiikka.PeliLogiikka;
 public class Piirtoalusta extends JPanel {
 
     private PeliLogiikka peli;
-
-    public Piirtoalusta(PeliLogiikka peli, LayoutManager layout, boolean isDoubleBuffered) {
-
-        this.peli = peli;
-    }
-
-    public Piirtoalusta(PeliLogiikka peli, LayoutManager layout) {
-
-        this.peli = peli;
-    }
-
-    public Piirtoalusta(PeliLogiikka peli, boolean isDoubleBuffered) {
-
-        this.peli = peli;
-    }
+    private JLabel J;
 
     public Piirtoalusta(PeliLogiikka peli) {
         this.peli = peli;
+        J = new JLabel();
+        J.setText(peli.getAjastin().getAika());
+        this.add(J);
+    }
+
+    public void paivitaJLabel() {
+        J.setText(peli.getAjastin().getAika());
     }
 
     /**
@@ -60,5 +54,6 @@ public class Piirtoalusta extends JPanel {
         g.fillRect(0, 500, 600, 8);
         g.setColor(Color.BLACK);
         peli.piirra(g);
+        this.paivitaJLabel();
     }
 }
