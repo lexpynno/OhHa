@@ -1,14 +1,23 @@
 Aihe: Syottopeli
-Ideana luoda käyttäjän haluama määrä pelaajia ja vaikeustaso, joka on käytännössä aika. 
-Tämän ajan sisällä on kiekko saatava liikkumaan seuraavalle pelaajalle. 
-Kaikki pelaajat käytävä läpi, jonka jälkeen voittaa pelin. 
-Jos saan vielä luotua jonkinlaisen järkevän maalivahtiotoiminnon lisään vielä maalinteon.
+Ideana luoda käyttäjän haluama määrä pelaajia ja vaikeustaso, joka on käytännössä aika ja pelaajien määrä yhdessä. 
+Tämän ajan sisällä on kiekko saatava käymään kaikilla pelaajilla. Pelaajia 2 - 10. Aika välillä 2 - 20 sekunttia. 
+Kaikki pelaajat käytävä läpi, jonka jälkeen voittaa pelin. Väärästä syötöstä kuluu aikaa sekuntti. Joten aikaisemmat 
+syötöt on hyvä pitää mielessä suorituksen ajan.
 
 Käyttäjät:
 Pelaaja
 
 Pelaajien toiminnot:
-Nuolinäppäimillä osoitus lähimpään pelaajaan, jolloin tapahtuu syöttö.
-Maalinteko esimerkiksi välilyönnillä.
+Vaikeustason valinta, johon kuuluu pelaajien määrän valinta sekä ajan pituuden valinta.
+Nuolinäppäimillä osoitus pelaajaan, jolloin tapahtuu syöttö.
 
 
+Rakennekuvaus
+Peliä luodessa sille annettaan käyttäjän syötteen mukaan pelaajien lukumäärä ja haluttu aika, jotka se valittaa naille 
+luokille eteenpain. Arpoja luodaan pelilogiikan konstruktorissa. Kun peli käynnistetään se luo käytöliittymän, 
+joka puolestaan luo kuuntelijat. Javan timer-luokka on näppäimistönkuuntelijaluokan sisällä ja käynnistyy
+kun se luodaan. Timerin run-metodi lähettää käskyjä sekä pelille, ajastimelle että päivittää väliajoin piirtoalustaa.
+
+P.S. Tämä ei varmaankaan ole se yksinkertaisin malli eikä noudata single responsibility -sääntöä, mutta näin sain sen 
+(vihdoin) toimimaan ja muutosyritykseni vain kaatoivat toiminnallisuuden. Päätin siis jättää asian tälläiseksi ja lisätä 
+näppäimistönkuuntelijan luokkakaavioon.

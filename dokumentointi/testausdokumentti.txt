@@ -1,0 +1,8 @@
+-Kaardinaalisuuntien syötöt eivät aina toimi. Syy tähän on minulle mysteeri, sillä useimmiten ne toimivat.
+
+-Välillä kun peli on päästy läpi, näyttää JLabel, joka siis näyttää kellon ja "voitit pelin", hyvin hämärältä. 
+Ikään kuin siinä olisi päällekkäisyyyttä.
+
+-Arpojan testejä en saanut millään keinoilla toimimaan ilman erroria. 
+
+-Pit ohjelma antoi mutaatiotestauksessa poikkeuksetta 0% eikä siis toiminut.

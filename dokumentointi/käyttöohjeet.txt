@@ -1,7 +1,15 @@
 Valitse 
--pelaajien määrä
--Vaikeustaso(aikamääre)
+-pelaajien määrä (syöttöjen määrä)
+	-Säätää vaikeustasoa aikamääreen kanssa.
+-Ajan pituus (vaikeustaso)
+	-Tämän ajan sisällä tulee syöttää kiekko jokaiselle pelaajalle. 
+	-Kiekko ei voi käydä kahta kertaa samalla pelaajalla.
+	-Väärään suuntaan suuntautuvasta syötöstä vähennetään sekuntti ajasta.
+-Paina valmis kun haluat pelata. HUOM! Aika alkaa juosta jo sekunnin päästä napin painalluksesta.
 
 Näppäimet: 
--Numeronappaimet 1 - 9, 5 poisluettuna ohjaavat syötön ilmansuuntien mukaan.
--Välilyönti ampuu maalin, mikäli esiehdot täyttyvät.
+-Numeronappaimet numpadissa (eli siinä näppäimistön oikeassa laidassa) 1 - 9, 5 poisluettuna ohjaavat syötön 
+luonnollisetn ilmansuuntien mukaan. Esimerkiksi 8 syöttää pohjoiseen(ylös), vastaavasti 6 itään(oikealle) 
+ja 9 koiliseen(ylä-oikealle).
+
+Peli päättyy kun aika on loppu tai kun kiekko on käynyt kaikilla pelaajilla.

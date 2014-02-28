@@ -20,3 +20,19 @@ koodin parannusta ja lisayksia seka javadocin aloittaminen.
 13.2
 kuutisen tuntia vierähti taas aiheen parissa. Viimeistelya vailla valmis tyo. 
 Kardinaalisuuntien toimintaan saaminen vaatii viela tyota. Pit-raporttejakaan en saanut toimimaan millaan.
+
+17.2
+Noin 2 tuntia yritin saada ajastusta timer luokalla toimimaan.
+
+20.2
+nelisen tuntia laitoksella pyrin saamaan ajastuksen toimimaan, mutta tuloksetta. 
+Paikalla ei ollut ohjaajaa joka olisi osannut auttaa kattavasti.
+
+21.2
+Noin tunnin verran kokeilin timeria eriluokissa ja sainkin sen toimimaan joskin huonosti.
+
+27.2
+Ehkä 3-4 tuntia viimeistelin työtä ja sain timerin toimimaan tyydyttävästi.
+
+28.2
+Hienosäätöä testien loppusilaukset ja viimeiset dokumentoinnit.
