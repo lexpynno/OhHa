@@ -139,9 +139,9 @@ public class PeliLogiikkaTest {
     @Test
     public void pelaajaOnPohjoisessaVaihtaaKiekollista() {
         peli.luoPelaajat(9999);
+        peli.pelaajaOnEtelassa();
+        peli.pelaajaOnEtelassa();
         pelaaja = peli.getKiekollinen();
-        peli.pelaajaOnEtelassa();
-        peli.pelaajaOnEtelassa();
         peli.pelaajaOnPohjoisessa();
         assertNotSame(pelaaja, peli.getKiekollinen());
     }
@@ -149,8 +149,8 @@ public class PeliLogiikkaTest {
     @Test
     public void pelaajaOnKoillisessaVaihtaaKiekollista() {
         peli.luoPelaajat(999);
-        pelaaja = peli.getKiekollinen();
         peli.pelaajaOnEtelassa();
+        pelaaja = peli.getKiekollinen();
         peli.pelaajaOnKoilisessa();
         assertNotSame(pelaaja, peli.getKiekollinen());
     }
@@ -174,8 +174,8 @@ public class PeliLogiikkaTest {
     @Test
     public void pelaajaOnLuoteessaVaihtaaKiekollista() {
         peli.luoPelaajat(999);
-        pelaaja = peli.getKiekollinen();
         peli.pelaajaOnEtelassa();
+        pelaaja = peli.getKiekollinen();
         peli.pelaajaOnLuoteessa();
         assertNotSame(pelaaja, peli.getKiekollinen());
     }

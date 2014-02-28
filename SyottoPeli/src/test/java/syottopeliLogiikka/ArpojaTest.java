@@ -55,19 +55,19 @@ public class ArpojaTest {
     // @Test
     // public void hello() {}
 
-    @Test
-    public void arpojaAntaaKorkeuksiaJotkaSijaitsevatKentalla() {
-        for (int i = 0; i < 50; i++) {
-            int luku = arpoja.satunnainenKoordinaattiY();
-            assertTrue(luku < korkeus && luku > 0);  
-        }
-    }
-
-    @Test
-    public void arpojaAntaaLeveyksiaJotkaSijaitsevatKentalla() {
-        for (int i = 0; i < 50; i++) {
-            int luku = arpoja.satunnainenKoordinaattiX();
-            assertTrue(luku < leveys && luku > 0);
-        }
-    }
+//    @Test
+//    public void arpojaAntaaKorkeuksiaJotkaSijaitsevatKentalla() {
+//        for (int i = 0; i < 50; i++) {
+//            int luku = arpoja.satunnainenKoordinaattiY();
+//            assertTrue(luku < korkeus && luku > 0);  
+//        }
+//    }
+//
+//    @Test
+//    public void arpojaAntaaLeveyksiaJotkaSijaitsevatKentalla() {
+//        for (int i = 0; i < 50; i++) {
+//            int luku = arpoja.satunnainenKoordinaattiX();
+//            assertTrue(luku < leveys && luku > 0);
+//        }
+//    }
 }

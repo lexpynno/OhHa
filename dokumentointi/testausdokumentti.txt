@@ -5,4 +5,6 @@ Ik‰‰n kuin siin‰ olisi p‰‰llekk‰isyyytt‰.
 
 -Arpojan testej‰ en saanut mill‰‰n keinoilla toimimaan ilman erroria. 
 
+-PeliLogiikkaTestauksen suuntausta testaavat testit eiv‰t ole t‰ydellisi‰ eiv‰tk‰ jokaisella kerralla toimi.
+
 -Pit ohjelma antoi mutaatiotestauksessa poikkeuksetta 0% eik‰ siis toiminut.
