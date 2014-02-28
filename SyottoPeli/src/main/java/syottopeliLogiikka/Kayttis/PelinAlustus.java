@@ -4,11 +4,8 @@
  */
 package syottopeliLogiikka.Kayttis;
 
-import syottopeliLogiikka.Kayttis.VaikeustasonKuuntelija;
-import syottopeliLogiikka.Kayttis.Tapahtumakuuntelija;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.event.ActionListener;
 import javax.swing.*;
 import syottopeli.syottopeliLogiikka.PeliLogiikka;
 
@@ -22,6 +19,10 @@ public class PelinAlustus implements Runnable {
     private JFrame frame;
     private PeliLogiikka peli;
 
+    /**
+     * Luo valintaikkunan, josta kayttaja voi valita haluamansa pelaajien
+     * maarana ja ajan pituuden.
+     */
     @Override
     public void run() {
         peli = new PeliLogiikka();
@@ -56,7 +57,7 @@ public class PelinAlustus implements Runnable {
 
         JButton nappi = new JButton("Valmis!");
 
-        Tapahtumakuuntelija Tapahtumankuuntelija = new Tapahtumakuuntelija(kaks, kolme, nelja, viisi, kuusi, seitseman, kahdeksan, yhdeksan, kymmenen, nappi, peli);
+        Tapahtumakuuntelija Tapahtumankuuntelija = new Tapahtumakuuntelija(kaks, kolme, nelja, viisi, kuusi, seitseman, kahdeksan, yhdeksan, kymmenen, peli);
 
         kaks.addActionListener(Tapahtumankuuntelija);
         kolme.addActionListener(Tapahtumankuuntelija);
@@ -89,41 +90,40 @@ public class PelinAlustus implements Runnable {
         container.add(yhdeksan);
         container.add(kymmenen);
 
-        container.add(new JLabel("Vaikeustaso (ajan pituus)?"));
+        container.add(new JLabel("Ajan pituus? (vaikeustaso)"));
 
-        JRadioButton mahdoton = new JRadioButton("Mahdoton (0.5 sekunttia)");
-        JRadioButton vaikea = new JRadioButton("Vaikea (1 sekuntti)");
-        JRadioButton normaali = new JRadioButton("normaali (2 sekunttia)");
-        JRadioButton helpohko = new JRadioButton("helpohko (3 sekunttia)");
-        JRadioButton helppo = new JRadioButton("Helppo (5 sekunttia)");
-        JRadioButton aloittelija = new JRadioButton("Aloittelija (10 sekunttia)");
+        JRadioButton vauva = new JRadioButton("Vauva (20 sekunttia)");
+        JRadioButton jonne = new JRadioButton("Jonne (15 sekunttia)");
+        JRadioButton Kannissa = new JRadioButton("Kannissa (8 sekunttia)");
+        JRadioButton perus = new JRadioButton("Perusjamppa (5 sekunttia)");
+        JRadioButton superi = new JRadioButton("Supermies (3 sekunttia)");
+        JRadioButton simpanssi = new JRadioButton("Simpanssi (2 sekunttia)");
 
-        VaikeustasonKuuntelija VaikeustasonKuuntelija = new VaikeustasonKuuntelija(aloittelija, helppo, helpohko, normaali, vaikea, mahdoton, peli);
+        VaikeustasonKuuntelija VaikeustasonKuuntelija = new VaikeustasonKuuntelija(simpanssi, superi, perus, jonne, Kannissa, vauva, peli, nappi);
 
-        mahdoton.addActionListener(VaikeustasonKuuntelija);
-        vaikea.addActionListener(VaikeustasonKuuntelija);
-        normaali.addActionListener(VaikeustasonKuuntelija);
-        helpohko.addActionListener(VaikeustasonKuuntelija);
-        helppo.addActionListener(VaikeustasonKuuntelija);
-        aloittelija.addActionListener(VaikeustasonKuuntelija);
+        simpanssi.addActionListener(VaikeustasonKuuntelija);
+        superi.addActionListener(VaikeustasonKuuntelija);
+        perus.addActionListener(VaikeustasonKuuntelija);
+        jonne.addActionListener(VaikeustasonKuuntelija);
+        Kannissa.addActionListener(VaikeustasonKuuntelija);
+        vauva.addActionListener(VaikeustasonKuuntelija);
 
         ButtonGroup buttonGroup = new ButtonGroup();
-        buttonGroup.add(aloittelija);
-        buttonGroup.add(helppo);
-        buttonGroup.add(helpohko);
-        buttonGroup.add(normaali);
-        buttonGroup.add(vaikea);
-        buttonGroup.add(mahdoton);
+        buttonGroup.add(simpanssi);
+        buttonGroup.add(superi);
+        buttonGroup.add(perus);
+        buttonGroup.add(jonne);
+        buttonGroup.add(Kannissa);
+        buttonGroup.add(vauva);
 
-        container.add(aloittelija);
-        container.add(helppo);
-        container.add(helpohko);
-        container.add(normaali);
-        container.add(vaikea);
-        container.add(mahdoton);
+        container.add(simpanssi);
+        container.add(superi);
+        container.add(perus);
+        container.add(Kannissa);
+        container.add(jonne);
+        container.add(vauva);
 
-
-        nappi.addActionListener(Tapahtumankuuntelija);
+        nappi.addActionListener(VaikeustasonKuuntelija);
         container.add(nappi);
     }
 }

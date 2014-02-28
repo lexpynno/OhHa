@@ -6,14 +6,13 @@ package syottopeliLogiikka.Kayttis;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
 import javax.swing.JRadioButton;
-import syottopeli.syottopeliLogiikka.PeliLogiikka;
 import syottopeli.syottopeliLogiikka.PeliLogiikka;
 
 /**
  *
- * Valittaa kayttajan haluamat valinnat pelaajien maarasta eteenpain ja kaynnistaa pelin.
+ * Valittaa kayttajan haluamat valinnat pelaajien maarasta eteenpain ja
+ * kaynnistaa pelin.
  */
 public class Tapahtumakuuntelija implements ActionListener {
 
@@ -26,11 +25,24 @@ public class Tapahtumakuuntelija implements ActionListener {
     private JRadioButton kahdeksan;
     private JRadioButton yhdeksan;
     private JRadioButton kymmenen;
-    private JButton nappi;
     private PeliLogiikka peli;
 
+    /**
+     * Luo kuuntelijan valintaikkunan napeille.
+     *
+     * @param kaks
+     * @param kolme
+     * @param nelja
+     * @param viisi
+     * @param kuusi
+     * @param seitseman
+     * @param kahdeksan
+     * @param yhdeksan
+     * @param kymmenen
+     * @param peli
+     */
     public Tapahtumakuuntelija(JRadioButton kaks, JRadioButton kolme, JRadioButton nelja, JRadioButton viisi, JRadioButton kuusi,
-            JRadioButton seitseman, JRadioButton kahdeksan, JRadioButton yhdeksan, JRadioButton kymmenen, JButton nappi, PeliLogiikka peli) {
+            JRadioButton seitseman, JRadioButton kahdeksan, JRadioButton yhdeksan, JRadioButton kymmenen, PeliLogiikka peli) {
         this.kaks = kaks;
         this.kolme = kolme;
         this.nelja = nelja;
@@ -40,10 +52,14 @@ public class Tapahtumakuuntelija implements ActionListener {
         this.kahdeksan = kahdeksan;
         this.yhdeksan = yhdeksan;
         this.kymmenen = kymmenen;
-        this.nappi = nappi;
         this.peli = peli;
     }
 
+    /**
+     * Kuuntelee valinnat ja jatkaa kaskyt eteenpain pelille.
+     *
+     * @param ae
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == kaks) {
@@ -72,10 +88,6 @@ public class Tapahtumakuuntelija implements ActionListener {
         }
         if (ae.getSource() == kymmenen) {
             peli.setPelaajienMaara(10);
-        }
-        if (ae.getSource() == nappi) {
-            peli.kaynnista();
-            
         }
     }
 }

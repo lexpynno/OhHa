@@ -6,7 +6,6 @@ package syottopeliLogiikka.Kayttis;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.LayoutManager;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import syottopeli.syottopeliLogiikka.PeliLogiikka;
@@ -20,19 +19,34 @@ public class Piirtoalusta extends JPanel {
     private PeliLogiikka peli;
     private JLabel J;
 
+    /**
+     * Alustaa alustan ja asettaa kelloon peliajan.
+     *
+     * @param peli
+     */
     public Piirtoalusta(PeliLogiikka peli) {
         this.peli = peli;
         J = new JLabel();
-        J.setText(peli.getAjastin().getAika());
+        J.setText(peli.getAjastin().getAikaString());
         this.add(J);
     }
 
+    /**
+     * Paivittaa pelin kelloa ajastimen arvoilla ja ilmoittaa jos peli on
+     * lapaisty.
+     */
     public void paivitaJLabel() {
-        J.setText(peli.getAjastin().getAika());
+        if (peli.kaikillaOllutKiekko() == true) {
+            J.setText("Voitit Pelin");
+            peli.keskeyta();
+            this.setIgnoreRepaint(true);
+            J.setIgnoreRepaint(true);
+        }
+        J.setText(peli.getAjastin().getAikaString());
     }
 
     /**
-     * Luo kentan viivat ja ympyrat.
+     * Luo kentan viivat, ympyrat ja pelaajat.
      */
     protected void paintComponent(Graphics g) {
         g.setColor(Color.red);
@@ -54,6 +68,5 @@ public class Piirtoalusta extends JPanel {
         g.fillRect(0, 500, 600, 8);
         g.setColor(Color.BLACK);
         peli.piirra(g);
-        this.paivitaJLabel();
     }
 }

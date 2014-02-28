@@ -4,7 +4,6 @@ package syottopeliLogiikka;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -50,46 +49,14 @@ public class PelaajaTest {
     }
 
     @Test
-    public void pelaajallaKiekkoToimiiKunTrue() {
+    public void pelaajallaKiekkoMetodiToimiiKunTrue() {
         pelaaja.setKiekko(true);
         assertEquals(pelaaja.onkoKiekkoHallussa(), true);
     }
 
     @Test
-    public void pelaajallaKiekkoToimiiKunFalse() {
+    public void pelaajallaKiekkoMetodiToimiiKunFalse() {
         assertEquals(pelaaja.onkoKiekkoHallussa(), false);
-    }
-
-    @Test
-    public void pelaajatPaallekkainTosi() {
-        A.setX(1);
-        A.setY(2);
-        peli.lisaaPelaaja(pelaaja);
-        peli.lisaaPelaaja(A);
-        peli.setPelaajienMaara(2);
-        peli.luoPelaajat(peli.getMaara());
-        assertEquals(pelaaja.ovatkotKoordinaatitVapaina(A.getX(), A.getY()), false);
-    }
-
-    public void pelaajatMelkeinPaallekkainTosi() {
-        A.setX(1);
-        A.setY(5);
-        peli.lisaaPelaaja(pelaaja);
-        peli.lisaaPelaaja(A);
-        peli.setPelaajienMaara(2);
-        peli.luoPelaajat(peli.getMaara());
-        assertEquals(pelaaja.ovatkotKoordinaatitVapaina(A.getX(), A.getY()), false);
-    }
-
-    @Test
-    public void pelaajatPaallekkainEpaTosi() {
-        A.setX(38);
-        A.setY(26);
-        peli.lisaaPelaaja(pelaaja);
-        peli.lisaaPelaaja(A);
-        peli.setPelaajienMaara(2);
-        peli.luoPelaajat(peli.getMaara());
-        assertEquals(pelaaja.ovatkotKoordinaatitVapaina(A.getX(), A.getY()), true);
     }
 
     @Test
@@ -97,6 +64,17 @@ public class PelaajaTest {
         assertEquals(pelaaja.getX(), 1);
         assertEquals(pelaaja.getY(), 2);
     }
+    @Test
+    public void LuokkaMuistaaKiekonHallussaPidon() {
+        pelaaja.setKiekko(true);
+        pelaaja.setKiekko(false);
+        assertEquals(pelaaja.OnkoKiekkoOllutHallussa(), true);
+    }
+    @Test
+    public void kiekkoHallussaFalseAluksi() {
+        assertEquals(pelaaja.OnkoKiekkoOllutHallussa(), false);
+    }
+    
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //

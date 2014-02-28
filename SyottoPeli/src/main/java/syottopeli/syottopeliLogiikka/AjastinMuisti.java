@@ -4,63 +4,42 @@
  */
 package syottopeli.syottopeliLogiikka;
 
-import java.awt.Graphics;
-import java.awt.event.ActionListener;
-import javax.swing.Timer;
-
 /**
  *
- * Luo kellon kayttajan toiveiden mukaan, joka saataa vaikeustasoa ja pelin
- * nopeutta.
+ * Pitaa muistissa pelin nykyista aikaa.
  */
-public class Ajastin extends Timer {
+public class AjastinMuisti {
 
     private int aika;
 
-    public Ajastin(ActionListener al) {
-        super(2000, al);
-        aika = 2000;
-        super.setDelay(200);
-        super.setRepeats(true);
-        super.start();
+    public AjastinMuisti(int aika) {
+        this.aika = aika;
     }
 
-    /**
-     *
-     * @return
-     */
-    public void kaynnisty() {
-        super.restart();
-    }
-
-    public void pysahdy() {
-        super.stop();
-    }
-
-    public void uudelleenKaynnistys() {
-        super.restart();
-    }
-
-    public void asetaAika(int i) {
-        super.setDelay(i);
+    public void setAika(int i) {
         aika = i;
     }
 
-    public String getAika() {
-        return "" + aika;
+    /**
+     * Palauttaa ajan string muodossa, jotta se voidaan nayttaa JLabelissa.
+     *
+     * @return
+     */
+    public String getAikaString() {
+        return "" + aika / 1000 + " sekunttia";
     }
 
     public int getAikaInt() {
         return aika;
     }
 
-    public void ajanKulutus() {
-        aika -= 200;
-        if (aika < 0) {
+    /**
+     * Kuluttaa aikaa sekunnilla.
+     */
+    public void kulutaAikaa() {
+        aika -= 1000;
+        if (aika <= 0) {
+            aika = 0;
         }
-    } 
-
-//    public void Piirra(Graphics g, int x, int y) {
-//        g.fillRect(x, y - 30, 5 + aika, 20);
-//    }
+    }
 }

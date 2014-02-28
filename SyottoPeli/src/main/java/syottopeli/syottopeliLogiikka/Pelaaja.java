@@ -7,8 +7,6 @@ import java.awt.Graphics;
 
 /**
  *
- *
- *
  * Pelaaja luo koordinaatistoon arvojen x ja y perusteella pallon "pelaajan",
  * jolla on totuusarvo kiekko.
  */
@@ -18,6 +16,16 @@ public class Pelaaja {
     private int y;
     private boolean kiekko;
     private boolean kiekkoOllutHallussa;
+
+    /**
+     * luo pelaajan koordinaateilla x ja y
+     */
+    public Pelaaja(int x, int y) {
+        this.kiekkoOllutHallussa = false;
+        this.x = x;
+        this.y = y;
+        this.kiekko = false;
+    }
 
     public void setX(int x) {
         this.x = x;
@@ -30,7 +38,7 @@ public class Pelaaja {
     /**
      * muuttaa totuusarvoa kiekko kyseisella pelaajalla
      *
-     * @param kiekko Kayttajan antama arvo
+     * @param kiekko
      *
      */
     public void setKiekko(boolean kiekko) {
@@ -39,6 +47,13 @@ public class Pelaaja {
         }
         this.kiekko = kiekko;
     }
+
+    /**
+     * Palauttaa true, jos pelaajalla on jossain pelin vaiheessa ollut kiekko
+     * hallussaan. Muuten false.
+     *
+     * @return kiekkoOllutHallussa
+     */
     public boolean OnkoKiekkoOllutHallussa() {
         return this.kiekkoOllutHallussa;
     }
@@ -57,36 +72,7 @@ public class Pelaaja {
      * @return boolean kiekko
      */
     public boolean onkoKiekkoHallussa() {
-
         return kiekko;
-    }
-
-    /**
-     * luo pelaajan koordinaateilla x ja y
-     */
-    public Pelaaja(int x, int y) {
-        this.kiekkoOllutHallussa = false;
-        this.x = x;
-        this.y = y;
-        this.kiekko = false;
-    }
-
-    /**
-     * kertoo ovatko kyseiset koordinaatit vapaina pelaajista
-     *
-     * @param x ja
-     * @param y
-     *
-     * @return totuusarvo true jos koordinaatit kayttamattomia
-     */
-    public boolean ovatkotKoordinaatitVapaina(int x, int y) {
-        int absX = Math.abs(this.x - x);
-        int absY = Math.abs(this.y - y);
-        if (absX < 10 && absY < 10) {
-            return false;
-        } else {
-            return true;
-        }
     }
 
     /**

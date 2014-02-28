@@ -23,8 +23,8 @@ public class ArpojaTest {
     Arpoja arpoja;
     Kayttoliittyma kayttoliittyma;
     PeliLogiikka peli;
-    int korkeus;
-    int leveys;
+    private int korkeus;
+    private int leveys;
 
     public ArpojaTest() {
     }
@@ -59,7 +59,7 @@ public class ArpojaTest {
     public void arpojaAntaaKorkeuksiaJotkaSijaitsevatKentalla() {
         for (int i = 0; i < 50; i++) {
             int luku = arpoja.satunnainenKoordinaattiY();
-            assertTrue(luku < korkeus);
+            assertTrue(luku < korkeus && luku > 0);  
         }
     }
 
@@ -67,7 +67,7 @@ public class ArpojaTest {
     public void arpojaAntaaLeveyksiaJotkaSijaitsevatKentalla() {
         for (int i = 0; i < 50; i++) {
             int luku = arpoja.satunnainenKoordinaattiX();
-            assertTrue(luku < leveys);
+            assertTrue(luku < leveys && luku > 0);
         }
     }
 }

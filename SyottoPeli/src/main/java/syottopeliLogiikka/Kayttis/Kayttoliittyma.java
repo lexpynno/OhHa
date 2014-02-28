@@ -9,8 +9,6 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import syottopeli.syottopeliLogiikka.PeliLogiikka;
-import syottopeli.syottopeliLogiikka.PeliLogiikka;
-import syottopeliLogiikka.Kayttis.Piirtoalusta;
 
 /**
  *
@@ -20,19 +18,16 @@ public class Kayttoliittyma implements Runnable {
 
     private JFrame frame;
     private PeliLogiikka peli;
-    private AjastuksenKaskyt a;
-
     /**
      *
      * @param peli
      */
     public Kayttoliittyma(PeliLogiikka peli) {
         this.peli = peli;
-
     }
 
     /**
-     *
+     *Luo ikkunan ja lisaa kuuntelijat.
      */
     @Override
     public void run() {
@@ -50,7 +45,7 @@ public class Kayttoliittyma implements Runnable {
 
     private void luoKomponentit(Container container) {
         Piirtoalusta alusta = new Piirtoalusta(peli);
-        a = new AjastuksenKaskyt(alusta, peli);
+        peli.setAlusta(alusta);
         container.add(alusta);
     }
 

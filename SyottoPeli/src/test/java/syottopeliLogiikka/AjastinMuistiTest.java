@@ -11,17 +11,17 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import syottopeli.syottopeliLogiikka.Ajastin;
+import syottopeli.syottopeliLogiikka.AjastinMuisti;
 
 /**
  *
  * @author Leo
  */
-public class AjastinTest {
+public class AjastinMuistiTest {
 
-    Ajastin ajastin;
+    AjastinMuisti ajastin;
 
-    public AjastinTest() {
+    public AjastinMuistiTest() {
     }
 
     @BeforeClass
@@ -34,7 +34,7 @@ public class AjastinTest {
 
     @Before
     public void setUp() {
-        
+        ajastin = new AjastinMuisti(5000);
     }
 
     @After
@@ -48,16 +48,32 @@ public class AjastinTest {
 
     @Test
     public void ajastimessaOletusarvo() {
-        assertNotNull(ajastin.getAika());
+        assertNotNull(ajastin.getAikaString());
     }
-
+    @Test
     public void ajastimenArvoSamaKuinAsetettu() {
-        ajastin.asetaAika(3000);
-        assertEquals(ajastin.getAika(), 3000);
+        ajastin.setAika(3000);
+        assertEquals(ajastin.getAikaInt(), 3000);
     }
-
+    @Test
     public void ajastimenArvoSamaKuinAsetettu2() {
-        ajastin.asetaAika(30000);
-        assertEquals(ajastin.getAika(), 30000);
+        ajastin.setAika(30000);
+        assertEquals(ajastin.getAikaInt(), 30000);
     }
+    @Test
+    public void ajanKulutusVahentaaSekunnin() {
+        ajastin.kulutaAikaa();
+        assertEquals(ajastin.getAikaInt(), 4000);
+    }
+    @Test
+    public void ajanKulutusEiVahennaAlleNollan() {
+        ajastin.kulutaAikaa();
+        ajastin.kulutaAikaa();
+        ajastin.kulutaAikaa();
+        ajastin.kulutaAikaa();
+        ajastin.kulutaAikaa();
+        ajastin.kulutaAikaa();
+        assertEquals(ajastin.getAikaInt(), 0);
+    }
+    
 }
